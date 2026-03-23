@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-blue: #2563eb;
+    --primary-dark: #1e40af;
+    --accent-teal: #0d9488;
+    --accent-coral: #f43f5e;
+    --neutral-warm: #fafaf9;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans text-stone-800 bg-white antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl font-semibold;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-semibold;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-medium;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white px-8 py-4 rounded-lg font-medium text-base
+           hover:bg-blue-700 transition-all duration-200 
+           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+           shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-blue-600 px-8 py-4 rounded-lg font-medium text-base
+           border border-blue-600 hover:bg-blue-50
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-36;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl;
+  }
+
+  /* Editorial card style */
+  .editorial-card {
+    @apply bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl 
+           transition-all duration-500 group;
+  }
+
+  /* Image overlay for cards */
+  .image-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
